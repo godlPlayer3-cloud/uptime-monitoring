@@ -105,9 +105,9 @@ with hero1:
     )
 
     render_agent_status(
-    latest.location,
-    "India-Agent-01"
-)
+        latest.location,
+        "India-Agent-01"
+    )
 
 with hero2:
 
@@ -115,15 +115,26 @@ with hero2:
         "### Latest Browser Screenshot"
     )
 
-    try:
+    screenshot_path = None
 
+    if latest.screenshot:
+        p = ROOT / latest.screenshot
+        if p.exists():
+            screenshot_path = str(p)
+        else:
+            # fallback: use any existing screenshot in the folder
+            screenshots_dir = ROOT / "screenshots"
+            if screenshots_dir.exists():
+                files = sorted(screenshots_dir.glob("*.png"))
+                if files:
+                    screenshot_path = str(files[-1])
+
+    if screenshot_path:
         st.image(
-            latest.screenshot,
+            screenshot_path,
             use_container_width=True
         )
-
-    except:
-
+    else:
         st.info(
             "Screenshot not available"
         )
