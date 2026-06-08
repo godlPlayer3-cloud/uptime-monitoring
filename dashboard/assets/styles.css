@@ -1,0 +1,276 @@
+/*
+--------------------------------------------------
+Hide Streamlit
+--------------------------------------------------
+*/
+
+#MainMenu {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/*
+--------------------------------------------------
+App
+--------------------------------------------------
+*/
+
+.stApp {
+
+    background:
+        linear-gradient(
+            180deg,
+            #0D001F 0%,
+            #140A2A 100%
+        );
+
+    color: white;
+}
+
+/*
+--------------------------------------------------
+Main Container
+--------------------------------------------------
+*/
+
+.block-container {
+
+    max-width: 96%;
+
+    padding-top: 1rem;
+
+    padding-bottom: 2rem;
+}
+
+/*
+--------------------------------------------------
+Sidebar
+--------------------------------------------------
+*/
+
+section[data-testid="stSidebar"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #180530 0%,
+            #100021 100%
+        );
+
+    border-right:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+}
+
+/*
+--------------------------------------------------
+Hero Title
+--------------------------------------------------
+*/
+
+.hero-title {
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #00FF87;
+
+    margin-bottom: 25px;
+
+    letter-spacing: .5px;
+}
+
+/*
+--------------------------------------------------
+Metric Cards
+--------------------------------------------------
+*/
+
+.metric-card {
+
+    background:
+        rgba(
+            26,
+            16,
+            53,
+            .95
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    border:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+    min-height: 140px;
+
+    transition: .2s;
+}
+
+.metric-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    border:
+        1px solid rgba(
+            0,
+            255,
+            135,
+            .35
+        );
+}
+
+.metric-title {
+
+    color: #B0B0B0;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.metric-value {
+
+    color: white;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    margin-top: 10px;
+}
+
+.metric-delta {
+
+    color: #00FF87;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+}
+
+/*
+--------------------------------------------------
+Screenshot Card
+--------------------------------------------------
+*/
+
+.screenshot-card {
+
+    background:
+        rgba(
+            26,
+            16,
+            53,
+            .95
+        );
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+}
+
+/*
+--------------------------------------------------
+Section Headers
+--------------------------------------------------
+*/
+
+h2,
+h3 {
+
+    color: white !important;
+
+    margin-top: 20px;
+}
+
+/*
+--------------------------------------------------
+Dataframe
+--------------------------------------------------
+*/
+
+[data-testid="stDataFrame"] {
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+/*
+--------------------------------------------------
+Metric Widgets
+--------------------------------------------------
+*/
+
+[data-testid="metric-container"] {
+
+    background:
+        rgba(
+            26,
+            16,
+            53,
+            .95
+        );
+
+    border-radius: 16px;
+
+    padding: 10px;
+}
+
+/*
+--------------------------------------------------
+Scrollbar
+--------------------------------------------------
+*/
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #37003C;
+
+    border-radius: 10px;
+}
+
+
+[data-testid="stMarkdownContainer"] > p {
+    display: contents;
+    margin: 0;
+    padding: 0;
+}

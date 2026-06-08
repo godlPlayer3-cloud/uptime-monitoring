@@ -1,0 +1,8 @@
+
+streamlit
+playwright
+pandas
+plotly
+sqlalchemy
+apscheduler
+streamlit-autorefresh
