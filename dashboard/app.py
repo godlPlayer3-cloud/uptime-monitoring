@@ -110,35 +110,18 @@ with hero1:
     )
 
 with hero2:
-
-    st.markdown(
-        "### Latest Browser Screenshot"
-    )
-
-    screenshot_path = None
-
-    if latest.screenshot:
-        p = ROOT / latest.screenshot
-        if p.exists():
-            screenshot_path = str(p)
-        else:
-            # fallback: use any existing screenshot in the folder
-            screenshots_dir = ROOT / "screenshots"
-            if screenshots_dir.exists():
-                files = sorted(screenshots_dir.glob("*.png"))
-                if files:
-                    screenshot_path = str(files[-1])
-
-    if screenshot_path:
-        st.image(
-            screenshot_path,
-            use_container_width=True
-        )
-    else:
-        st.info(
-            "Screenshot not available"
-        )
-
+    st.markdown("### Latest Browser Screenshot")
+    
+    # DEBUG - remove after fixing
+    st.write("ROOT:", str(ROOT))
+    st.write("DB screenshot value:", latest.screenshot)
+    st.write("Resolved path:", str(ROOT / latest.screenshot) if latest.screenshot else "None")
+    screenshots_dir = ROOT / "screenshots"
+    st.write("Screenshots dir:", str(screenshots_dir))
+    st.write("Screenshots dir exists:", screenshots_dir.exists())
+    if screenshots_dir.exists():
+        files = sorted(screenshots_dir.glob("*.png"))
+        st.write("Files found:", [str(f) for f in files])
 #
 # KPI Row
 #
