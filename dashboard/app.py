@@ -110,18 +110,35 @@ with hero1:
     )
 
 with hero2:
-    st.markdown("### Latest Browser Screenshot")
-    
-    # DEBUG - remove after fixing
-    st.write("ROOT:", str(ROOT))
-    st.write("DB screenshot value:", latest.screenshot)
-    st.write("Resolved path:", str(ROOT / latest.screenshot) if latest.screenshot else "None")
+
+    st.markdown(
+        "### Latest Browser Screenshot"
+    )
+
+    screenshot_path = None
+
+    # always check folder — DB value may be None for mock data
     screenshots_dir = ROOT / "screenshots"
-    st.write("Screenshots dir:", str(screenshots_dir))
-    st.write("Screenshots dir exists:", screenshots_dir.exists())
     if screenshots_dir.exists():
         files = sorted(screenshots_dir.glob("*.png"))
-        st.write("Files found:", [str(f) for f in files])
+        if files:
+            screenshot_path = str(files[-1])
+
+    # override with DB path only if the file actually exists
+    if latest.screenshot:
+        p = ROOT / latest.screenshot
+        if p.exists():
+            screenshot_path = str(p)
+
+    if screenshot_path:
+        st.image(
+            screenshot_path,
+            use_container_width=True
+        )
+    else:
+        st.info(
+            "Screenshot not available"
+        )
 #
 # KPI Row
 #
